@@ -10,3 +10,6 @@ def count_dna_sequence(path_to_textfile):
   counted_bases = Counter(dna_string)
 
   return counted_bases
+
+path_to_textfile = input("Enter filepath to the DNA sequence .txt file ")
+print zip(count_dna_sequence(path_to_textfile).keys(), count_dna_sequence(path_to_textfile).values())
