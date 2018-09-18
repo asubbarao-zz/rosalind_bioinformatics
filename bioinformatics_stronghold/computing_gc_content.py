@@ -41,9 +41,9 @@ def calculate_gc(sequence):
 def get_highest_gc(seq_dict):
 	"""calculate the %_gc values for each sequence, then run a max() on the percentages, finally return
 	the sequence ID and %_gc of the highest-GC-content sequence"""
-	
-    new_array = np.c_[seq_dict, map(calculate_gc, seq_dict[:,1])]
-    max_gc_entry = new_array[new_array[:,2] == max(new_array[:,2])]
-    max_gc_percent = float(max_gc_entry[0,2])*100
+
+    new_array = np.c_[seq_dict, map(calculate_gc, seq_dict[:,1])] #add new column calculate_gc 
+    max_gc_entry = new_array[new_array[:,2] == max(new_array[:,2])] #find the row with the highest gc %
+    max_gc_percent = float(max_gc_entry[0,2])*100 
     return max_gc_entry[0,0] + " " + str(max_gc_percent)
 
